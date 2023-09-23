@@ -4,6 +4,8 @@
 Viewers Turned Streamers
 Difficulty: Hard
 
+Question ID: ID 2012
+
 Link to the question: https://platform.stratascratch.com/coding/2012-viewers-turned-streamers
 
 */
