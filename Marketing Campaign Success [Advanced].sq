@@ -1,0 +1,25 @@
+
+/*
+
+Marketing Campaign Success [Advanced]
+Difficulty: Hard
+
+Question ID: ID 514
+
+Link to the question: 
+https://platform.stratascratch.com/coding/514-marketing-campaign-success-advanced
+
+*/
+
+
+WITH cte AS (
+    SELECT user_id
+        , MIN(created_at) OVER(PARTITION BY user_id) AS first_purchase
+        , MIN(created_at) OVER(PARTITION BY user_id, product_id) AS first_pp
+    FROM marketing_campaign
+    )
+SELECT COUNT(DISTINCT user_id)
+FROM cte
+WHERE first_purchase != first_pp
+;
+
